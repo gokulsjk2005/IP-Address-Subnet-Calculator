@@ -1,0 +1,42 @@
+.container{
+    width: 100%;
+    height: 100dvh;
+    background: linear-gradient(120deg,#58b796,#f0f0f0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+.heading{
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.smallContainer{
+    width: 320px;
+    height: 400px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgb(13, 54, 38), -2px -2px 8px rgb(133, 149, 141);
+}
+.head{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+#signUp, #login{
+    font-family: "Kaushan Script", cursive;
+    cursor: pointer;
+}
+#signUp{
+    font-size: 20px;
+    color:#000;
+}
+#login{
+    font-size: 16px;
+    color: #242020;
+}
+hr{
+    border: 3px solid #0a4729;
+}
