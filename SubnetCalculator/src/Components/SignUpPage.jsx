@@ -1,4 +1,4 @@
-import { useRef} from "react";
+import { useRef, useState} from "react";
 
 const SignUpPage = () => {
 
@@ -11,6 +11,13 @@ const SignUpPage = () => {
     let forgetRef = useRef();
     let formRef = useRef();
     let resetRef = useRef();
+    let nameRef = useRef();
+    let emailRegisterRef = useRef();
+    let emailLoginRef = useRef();
+    let emailResetRef = useRef();
+    let passwordRef = useRef();
+    let passwordLoginRef = useRef();
+    let buttonRef = useRef();
 
     const switchRegisterPage = () => {
         loginRef.current.style.display="none";
@@ -56,6 +63,82 @@ const SignUpPage = () => {
         resetRef.current.style.display="block";
     }
 
+
+    const userDetails = {
+        username : "",
+        email : "",
+        password : ""
+    }
+
+    const [data,setData] = useState(userDetails);
+
+    const handleInput = (event) =>{
+        console.log(event.target.value);
+        console.log(event.target.name);
+        const name = event.target.name;
+        const value = event.target.value;
+        
+        setData({...data,[name]:value});
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        if(data.name=="" || data.email=="" || data.password==""){
+            alert("hii");
+        }
+        else{
+            const getData = JSON.parse(localStorage.getItem("user") || "[]");
+            let arr = [];
+            arr = [...getData];
+            arr.push(data);
+            localStorage.setItem("user",JSON.stringify(arr));
+            alert("SignUp Successful");
+            nameRef.current.value="";
+            emailRegisterRef.current.value="";
+            passwordRef.current.value="";
+        }
+    }
+
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+
+    const handleLoginInput = (event) => {
+        const value = event.target.value;
+        const name = event.target.name;
+        if("email" == name){
+            setEmail(value);
+        }
+        if("password" == name){
+            setPassword(value);
+        }
+    }
+
+    const handleLoginSubmit = (event) => {
+        event.preventDefault();
+
+        if(email == "" || password == ""){
+            alert("dfghjk");
+        }
+        else{
+            let getDetails = JSON.parse(localStorage.getItem("user"));
+            console.log(getDetails);
+            getDetails.map((curValue)=>{
+                console.log(curValue.password);
+                let storeEmail = curValue.email;
+                let storePassword = curValue.password;
+
+                if(storeEmail == email && storePassword == password){
+                    alert("Successfulllllll");
+                    emailLoginRef.current.value="";
+                    passwordLoginRef.current.value="";
+                }
+                else{
+                    alert("Not Successful");
+                }
+            })
+        }
+    }
+
     return (
         <div className="container">
             <h1 className="heading">IP Address Subnet Calculator</h1>
@@ -70,20 +153,20 @@ const SignUpPage = () => {
                 </div>
                 <hr id="hr" ref={hrRef}/>
                 <div className="form1" ref={registerRef}>
-                    <form action="register"  ref={registerForm} name="register">
+                    <form action="register" onSubmit={handleSubmit} ref={registerForm} name="register">
                         <p id="new">Create a new account </p>
-                        <input type="text" className="input" id="username" name="username" placeholder="Username" autoComplete="off" required />
-                        <input type="text" className="input" id="email" name="email" placeholder="Email address" autoComplete="off" required />
-                        <input type="password" className="input" id="password" name="password" placeholder="Password" autoComplete="off" required />
+                        <input type="text" className="input" id="username" ref={nameRef} name="username" placeholder="Username" autoComplete="off" required onChange={handleInput}/>
+                        <input type="text" className="input" id="email" ref={emailRegisterRef} name="email" placeholder="Email address" autoComplete="off" required onChange={handleInput}/>
+                        <input type="password" className="input" id="password" ref={passwordRef} name="password" placeholder="Password" autoComplete="off" required onChange={handleInput}/>
                         <br />
-                        <button type="submit" className="formBtn" name="signUpBtn">Sign Up</button>
+                        <button type="submit" ref={buttonRef} className="formBtn" name="signUpBtn">Sign Up</button>
                     </form>
                 </div>
                 <div className="form2" ref={loginRef}>
-                    <form action="register" name="login">
+                    <form action="register" name="login" onSubmit={handleLoginSubmit}>
                         <p id="welcome">Welcome Back!</p>
-                        <input type="text" className="input" id="loginEmail" name="email" placeholder="Email address" autoComplete="off" required />
-                        <input type="password" className="input" id="loginPassword" name="password" placeholder="Password" autoComplete="off" required />
+                        <input type="text" className="input" ref={emailLoginRef} id="loginEmail" name="email" placeholder="Email address" autoComplete="off" required onChange={handleLoginInput}/>
+                        <input type="password" className="input" ref={passwordLoginRef} id="loginPassword" name="password" placeholder="Password" autoComplete="off" required onChange={handleLoginInput}/>
                         <br />
                         <p onClick={forgotPass} id="forgotPass">Forget Password?</p>
                         <button type="submit" className="formBtn" id="loginBtn" name="loginBtn">Login</button>
@@ -95,7 +178,7 @@ const SignUpPage = () => {
                     <p id="forgot">Forgot Password ?</p>
                     <hr id="hr2"/>
                     <p id="pforgot">Enter your email address to <br />reset your password.</p>
-                    <input type="email" className="input" id="forgotEmail" name="email" placeholder="Email address" autoComplete="off" required />
+                    <input type="email" className="input" ref={emailResetRef} id="forgotEmail" name="email" placeholder="Email address" autoComplete="off" required />
                     <br />
                     <button type="submit" className="forgotBtn" id="submitBtn" name="submitBtn" onClick={resetPass}>Submit</button>
                     <button className="forgotBtn" id="cancelBtn" name="cancelBtn" onClick={goBack}>Cancel</button>
