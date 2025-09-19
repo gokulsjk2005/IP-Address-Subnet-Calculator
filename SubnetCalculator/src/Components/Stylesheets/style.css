@@ -17,6 +17,7 @@
     height: 400px;
     border-radius: 5px;
     box-shadow: 5px 5px 8px rgb(13, 54, 38), -2px -2px 8px rgb(133, 149, 141);
+    display: block;
 }
 .head{
     width: 100%;
@@ -94,7 +95,7 @@ hr{
 #forgotPass{
     font-size: 15px;
     color: #000;
-    text-decoration: none;
+    cursor: pointer;
     margin-left: 5px;
 }
 #loginBtn{
@@ -113,4 +114,106 @@ hr{
     margin-top: -5px;
     margin-bottom: 18px;
     margin-left: 3px;
+}
+.smallContainer2{
+    width: 280px;
+    height: 300px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgb(13, 54, 38), -2px -2px 8px rgb(133, 149, 141);
+    padding-top: 30px;
+    padding-left: 20px;
+    display: none;
+    margin-top: 30px;
+}
+#forgot{
+    font-size: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    font-weight: 500;
+}
+#forgotEmail{
+    width: 200px;
+    height: 40px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    padding-left: 10px;
+    border-radius: 10px;
+    outline: 0;
+    border:2px solid #0a4729;
+    background: transparent;
+}
+#hr2{
+    border: 3px solid #0a4729;
+    width: 120px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 50px;
+    border-radius: 5px;
+}
+#pforgot{
+    font-size: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+}
+.forgotBtn{
+    width: 80px;
+    height: 35px;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 30px;
+    color: #fff;
+    background-color: #0a4729;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#submitBtn{
+    margin-left: 20px;
+}
+#cancelBtn{
+    background-color: #302d2d;
+    margin-left: 40px;
+}
+.smallContainer3{
+    width: 280px;
+    height: 330px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 8px rgb(13, 54, 38), -2px -2px 8px rgb(133, 149, 141);
+    padding-top: 30px;
+    padding-left: 20px;
+    display: none;
+    margin-top: 10px;
+}
+b{
+    cursor: pointer;
+    color: #0a4729;
+}
+#resetPassword,#confirmPassword{
+    width: 220px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+#resetBtn{
+    width: 80px;
+    height: 35px;
+    font-size: 13px;
+    margin-top: 10px;
+    margin-left: 80px;
+    color: #fff;
+    background-color: #0a4729;
+    border: 0;
+    outline: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#hr3{
+    border: 3px solid #0a4729;
+    width: 120px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+    position: relative;
+    left: 56px;
+    border-radius: 5px;
 }

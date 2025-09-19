@@ -7,6 +7,10 @@ const SignUpPage = () => {
     let hrRef = useRef();
     let loginTitleRef = useRef();
     let registerTitleRef = useRef();
+    let registerForm = useRef();
+    let forgetRef = useRef();
+    let formRef = useRef();
+    let resetRef = useRef();
 
     const switchRegisterPage = () => {
         loginRef.current.style.display="none";
@@ -36,10 +40,26 @@ const SignUpPage = () => {
         loginTitleRef.current.style.marginTop="2px";
     }
 
+    const forgotPass = () =>{
+        formRef.current.style.display="none";
+        forgetRef.current.style.display="block";
+    }
+
+    const goBack = () =>{
+        formRef.current.style.display="block";
+        forgetRef.current.style.display="none";
+        resetRef.current.style.display="none";
+    }
+    const resetPass = () => {
+        formRef.current.style.display="none";
+        forgetRef.current.style.display="none";
+        resetRef.current.style.display="block";
+    }
+
     return (
         <div className="container">
             <h1 className="heading">IP Address Subnet Calculator</h1>
-            <div className="smallContainer">
+            <div className="smallContainer" ref={formRef}>
                 <div className="head">
                     <div className="signUpDiv">
                         <h2 id="login" onClick={switchLoginPage} ref={loginTitleRef}>Login</h2>
@@ -50,7 +70,7 @@ const SignUpPage = () => {
                 </div>
                 <hr id="hr" ref={hrRef}/>
                 <div className="form1" ref={registerRef}>
-                    <form action="register" name="register">
+                    <form action="register"  ref={registerForm} name="register">
                         <p id="new">Create a new account </p>
                         <input type="text" className="input" id="username" name="username" placeholder="Username" autoComplete="off" required />
                         <input type="text" className="input" id="email" name="email" placeholder="Email address" autoComplete="off" required />
@@ -65,11 +85,33 @@ const SignUpPage = () => {
                         <input type="text" className="input" id="loginEmail" name="email" placeholder="Email address" autoComplete="off" required />
                         <input type="password" className="input" id="loginPassword" name="password" placeholder="Password" autoComplete="off" required />
                         <br />
-                        <p><a href="#" id="forgotPass">Forget Password?</a></p>
+                        <p onClick={forgotPass} id="forgotPass">Forget Password?</p>
                         <button type="submit" className="formBtn" id="loginBtn" name="loginBtn">Login</button>
                     </form>
-                </div>  
+                </div> 
             </div>
+            <div className="smallContainer2" ref={forgetRef}>
+                <form action="forgetPassword" name="forget">
+                    <p id="forgot">Forgot Password ?</p>
+                    <hr id="hr2"/>
+                    <p id="pforgot">Enter your email address to <br />reset your password.</p>
+                    <input type="email" className="input" id="forgotEmail" name="email" placeholder="Email address" autoComplete="off" required />
+                    <br />
+                    <button type="submit" className="forgotBtn" id="submitBtn" name="submitBtn" onClick={resetPass}>Submit</button>
+                    <button className="forgotBtn" id="cancelBtn" name="cancelBtn" onClick={goBack}>Cancel</button>
+                </form>
+            </div> 
+            <div className="smallContainer3" ref={resetRef}>
+                <form action="forgetPassword" name="forget">
+                    <p id="forgot">Setup New Password</p>
+                    <hr id="hr3"/>
+                    <p id="pforgot">Already know your password ?<br />back to<b onClick={goBack}> login page</b></p>
+                    <input type="password" className="input" id="resetPassword" name="password" placeholder="Enter new password" autoComplete="off" required />    
+                    <input type="password" className="input" id="confirmPassword" name="password" placeholder="Confirm password" autoComplete="off" required />
+                    <br />
+                    <button type="submit" id="resetBtn" name="submitBtn">Reset</button>
+                </form>
+            </div> 
         </div>
     );
 };
