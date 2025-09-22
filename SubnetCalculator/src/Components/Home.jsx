@@ -78,7 +78,10 @@ const Home = () => {
             result = "              Error : " + e.message;
         }
         setIpv4Result(result);
-
+        setIpv4("");
+        setIpv4Mask("");
+        v4inputRef.current.value="";
+        v4input2Ref.current.value="";
     };
     
     const calcIPv6 = () => {
@@ -87,19 +90,27 @@ const Home = () => {
         let result = "";
 
         resultRef.current.style.display="flex";
-
         setIpv4Result("");
     
         try {
-            result = `
-            IP Address: ${ip}                         
-            Prefix Length: /${prefix}
-            Note : IPv6 does not use broadcast, and host calculations depend on allocation.
-            `;
+            if(ipv6!=="" || ipv6Prefix!==""){
+                result = `
+                IP Address: ${ip}                         
+                Prefix Length: /${prefix}
+                Note : IPv6 does not use broadcast, and host calculations depend on allocation.
+                `;
+            }
+            else{
+                result = `                       Error : Invalid IPv6 address`
+            }
         } catch (e){
             result = "Error: " + e.message;
         }
         setIpv6Result(result);
+        setIpv6("");
+        setIpv6Prefix("");
+        v6inputRef.current.value="";
+        v6input2Ref.current.value="";
     };
 
 
@@ -138,8 +149,8 @@ const Home = () => {
 
             <div className="resultContainer">
                 <div ref={resultRef} className="resultApp">
-                    <pre className="bg-gray-100 p-2 mt-2 whitespace-pre-wrap">{ipv4Result}</pre>
-                    <pre className="bg-gray-100 p-2 mt-2 whitespace-pre-wrap">{ipv6Result}</pre>
+                    <pre id="ipv4result" className="bg-gray-100 p-2 mt-2 whitespace-pre-wrap">{ipv4Result}</pre>
+                    <pre id="ipv6result" className="bg-gray-100 p-2 mt-2 whitespace-pre-wrap">{ipv6Result}</pre>
                 </div>
             </div>
 
