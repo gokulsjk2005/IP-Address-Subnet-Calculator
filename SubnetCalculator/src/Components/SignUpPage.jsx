@@ -66,12 +66,8 @@ const SignUpPage = () => {
         forgetRef.current.style.display="none";
         resetRef.current.style.display="none";
         resetErrorRef.current.style.display="none";
+        errorForgotRef.current.style.display="none";
     }
-    // const resetPass = () => {
-    //     formRef.current.style.display="none";
-    //     forgetRef.current.style.display="none";
-    //     resetRef.current.style.display="block";
-    // }
 
     const userDetails = {
         username : "",
@@ -202,6 +198,8 @@ const SignUpPage = () => {
                 }
             })
         }
+        resetPassRef.current.value="";
+        resetConRef.current.value="";
     }
 
 
