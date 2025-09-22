@@ -65,6 +65,7 @@ const SignUpPage = () => {
         formRef.current.style.display="block";
         forgetRef.current.style.display="none";
         resetRef.current.style.display="none";
+        resetErrorRef.current.style.display="none";
     }
     // const resetPass = () => {
     //     formRef.current.style.display="none";
