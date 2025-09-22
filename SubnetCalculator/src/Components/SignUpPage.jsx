@@ -145,7 +145,7 @@ const SignUpPage = () => {
                 // headingRef.current.style.display="none";
                 // appRef.current.style.display="block";
                 localStorage.setItem("loggedIn",true);
-                navigate('/');
+                navigate("/");
             }
         })
     }
