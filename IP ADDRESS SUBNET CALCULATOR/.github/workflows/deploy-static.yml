@@ -3,7 +3,7 @@ name: Deploy static site
 on:
   push:
     branches:
-      - main  # replace with your default branch
+      - main  # your default branch
 
 jobs:
   deploy:
