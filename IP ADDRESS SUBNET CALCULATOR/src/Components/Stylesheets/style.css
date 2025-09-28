@@ -49,7 +49,6 @@ hr{
     margin-top: -25px;
     position: relative;
     left: 40px; 
-    /* left: 150px; */
     border-radius: 5px;
     transition: left 1s;
 }
@@ -273,8 +272,6 @@ b{
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
-   /* border-radius: 5px;
-    box-shadow: 5px 5px 8px rgb(54, 63, 60), -2px -2px 8px rgb(133, 149, 141); */
 }
 .appInsideContainer {
     display: flex;
@@ -304,10 +301,7 @@ b{
     font-size: 15px;
     font-weight: bold;
     transition: background 0.3s;
-    /* position: relative; */
     display: inline;
-    /* top: -100px;
-    left: 700px; */
     width: 100px;
     height:45px;
     border-radius: 10px;
@@ -339,12 +333,6 @@ b{
     font-weight: 500;
     margin-bottom: 10px;
     margin-left: 35px;
-    /* background-color: #353333; 
-    color: rgb(242, 225, 225);
-    width: 250px;
-    height: 40px; 
-    padding-left: 10px;
-    padding-top: 2px;  */
 }
 
 #hr5{
@@ -358,71 +346,71 @@ b{
 }
 /* Title */
 .appContainer h1 {
-  text-align: center;
-  font-size: 24px;
-  font-weight: 700;
-  color: #000;
-  margin-bottom: 20px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 20px;
 }
 
 /* Login Card */
 .login-container {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  width: 320px;
-  text-align: center;
-  backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 320px;
+    text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 /* Tabs (Login / Signup) */
 .tabs {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-  font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    font-weight: 600;
 }
 
 .tabs span {
-  cursor: pointer;
-  font-style: italic;
-  color: #1c3c2e;
+    cursor: pointer;
+    font-style: italic;
+    color: #1c3c2e;
 }
 
 .tabs .active {
-  border-bottom: 3px solid #1c3c2e;
-  padding-bottom: 3px;
+    border-bottom: 3px solid #1c3c2e;
+    padding-bottom: 3px;
 }
 
 /* Welcome Text */
 .login-container h2 {
-  margin: 15px 0;
-  font-weight: 600;
-  font-size: 20px;
-  color: #1c3c2e;
+    margin: 15px 0;
+    font-weight: 600;
+    font-size: 20px;
+    color: #1c3c2e;
 }
 
 /* Input Fields */
 .appContainer input {
-  width: 250px;
-  height: 40px;
-  padding-left: 8px;
-  border: 1px solid #1c3c2e;
-  outline: none;
-  font-size: 13px;
-  margin-bottom: 10px;
-  letter-spacing: 1px;
+    width: 250px;
+    height: 40px;
+    padding-left: 8px;
+    border: 1px solid #1c3c2e;
+    outline: none;
+    font-size: 13px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 /* Forgot Password */
 .login-container .forgot {
-  display: block;
-  margin: 5px 0 15px;
-  text-align: left;
-  font-size: 13px;
-  color: #1c3c2e;
-  cursor: pointer;
+    display: block;
+    margin: 5px 0 15px;
+    text-align: left;
+    font-size: 13px;
+    color: #1c3c2e;
+    cursor: pointer;
 }
 
 .labelApp{
@@ -432,22 +420,22 @@ b{
 
 /* Login Button */
 .appContainer button {
-  background: #0d3b2e;
-  color: white;
-  padding: 10px 30px;
-  border: none;
-  cursor: pointer;
-  font-size: 15px;
-  font-weight: bold;
-  transition: background 0.3s;
-  width: 150px;
-  border-radius: 10px;
-  margin-left: 55px;
-  margin-top: 10px;
+    background: #0d3b2e;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: background 0.3s;
+    width: 150px;
+    border-radius: 10px;
+    margin-left: 55px;
+    margin-top: 10px;
 }
 
 .appContainer button:hover {
-  background: #095343;
+    background: #095343;
 }
 
 .resultContainer{
@@ -476,15 +464,13 @@ b{
 /* Responsiveness */
 
 @media (min-width:420px) and  (max-width: 525px) {
-    
-.heading{
-    font-size: 25px;
-    margin-top: 30px;
-    margin-bottom: 50px;
-}
+    .heading{
+        font-size: 25px;
+        margin-top: 30px;
+        margin-bottom: 50px;
+    }
 }
 @media (min-width:360px) and  (max-width: 420px){
-
     .heading{
         font-size: 22px;
     }

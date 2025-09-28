@@ -5,14 +5,21 @@ import ProtectedRouter from './Services/ProtectedRouter';
 
 const App = () => {
   return (
-    <BrowserRouter>
+
+    <BrowserRouter> 
+
         <Routes>
+
+            {/* Public Routes */}
             <Route path='/login' element = {<SignUpPage/>}/>
-             {/* Protected Routes */}
+
+            {/* Protected Routes */}
             <Route path='/' element={<ProtectedRouter/>}>
                 <Route path='/' element = {<Home/>}/>
             </Route>
+
         </Routes>
+        
     </BrowserRouter>
   )
 }

@@ -17,7 +17,7 @@ const Home = () => {
         navigate('/login');
     }
 
-
+    
     const [ipv4, setIpv4] = useState("");
     const [ipv4Mask, setIpv4Mask] = useState("");
     const [ipv4Result, setIpv4Result] = useState("");
@@ -112,7 +112,6 @@ const Home = () => {
         v6inputRef.current.value="";
         v6input2Ref.current.value="";
     };
-
 
 
   return (

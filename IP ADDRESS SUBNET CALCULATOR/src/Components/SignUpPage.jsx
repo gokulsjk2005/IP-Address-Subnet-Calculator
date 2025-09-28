@@ -140,151 +140,75 @@ const SignUpPage = () => {
     }
 
     const [forgotEmail, setForgotEmail] = useState("");
-const [resetPassword, setResetPassword] = useState("");
+    const [resetPassword, setResetPassword] = useState("");
 
-// Handle email input
-const handleForgotInput = (event) => {
-  const value = event.target.value;
-  const name = event.target.name;
+    // Handle email input
+    const handleForgotInput = (event) => {
+        const value = event.target.value;
+        const name = event.target.name;
+        errorForgotRef.current.style.display = "none";
+        if (name === "email") {
+            setForgotEmail(value);
+        }
+    };
 
-  errorForgotRef.current.style.display = "none";
-
-  if (name === "email") {
-    setForgotEmail(value);
-  }
-};
-
-// Handle forgot password submit
-const handleForgotSubmit = (event) => {
-  event.preventDefault();
-
-  const users = JSON.parse(localStorage.getItem("user")) || [];
-  const userIndex = users.findIndex((user) => user.email === forgotEmail);
-
-  if (userIndex !== -1) {
-    // Email exists, show reset form
-    formRef.current.style.display = "none";
-    forgetRef.current.style.display = "none";
-    resetRef.current.style.display = "block";
-
-    // Store index temporarily for reset
-    localStorage.setItem("resetUserIndex", userIndex);
-  } else {
-    // Email not found
-    errorForgotRef.current.style.display = "block";
-    emailResetRef.current.value = "";
-    setForgotEmail("");
-  }
-};
-
-// Handle reset password input
-const handleResetInput = (event) => {
-  const value = event.target.value;
-  const name = event.target.name;
-
-  resetErrorRef.current.style.display = "none";
-
-  if (name === "password") {
-    setResetPassword(value);
-  }
-};
-
-// Handle password reset submit
-const handleResetSubmit = (event) => {
-  event.preventDefault();
-
-  const users = JSON.parse(localStorage.getItem("user")) || [];
-  const userIndex = localStorage.getItem("resetUserIndex");
-
-  if(resetPassRef.current.value !== resetConRef.current.value){
-         resetErrorRef.current.style.display="block";
-     }
-    else if(userIndex !== null && resetPassword) {
-    users[userIndex].password = resetPassword;
-    localStorage.setItem("user", JSON.stringify(users));
-
-    // Clear form and state
-    setResetPassword("");
-    localStorage.removeItem("resetUserIndex");
-
-    resetSuccessRef.current.style.display="block";
-    resetFormRef.current.style.display = "none";
-  } 
-};
+    // Handle forgot password submit
+    const handleForgotSubmit = (event) => {
+        event.preventDefault();
+        const users = JSON.parse(localStorage.getItem("user")) || [];
+        const userIndex = users.findIndex((user) => user.email === forgotEmail);
+        if (userIndex !== -1) {
+            // Email exists, show reset form
+            formRef.current.style.display = "none";
+            forgetRef.current.style.display = "none";
+            resetRef.current.style.display = "block";
+            // Store index temporarily for reset
+            localStorage.setItem("resetUserIndex", userIndex);
+        } else {
+            // Email not found
+            errorForgotRef.current.style.display = "block";
+            emailResetRef.current.value = "";
+            setForgotEmail("");
+        }
+    };
 
 
-    // const [forgotemail,setForgotEmail] = useState("");
+    // Handle reset password input
+    const handleResetInput = (event) => {
+        const value = event.target.value;
+        const name = event.target.name;
+        resetErrorRef.current.style.display = "none";
+        if (name === "password") {
+            setResetPassword(value);
+        }
+    };
 
-    // const handleForgotInput = (event) => {
-    //     const value = event.target.value;
-    //     const name = event.target.name;
-
-    //     errorForgotRef.current.style.display="none";
-
-    //     if("email" == name){
-    //         setForgotEmail(value);
-    //     }
-    // }
-
-    // const handleForgotSubmit = (event) => {
-    //     event.preventDefault();
-
-    //     let getDetails = JSON.parse(localStorage.getItem("user"));
-    //     console.log(getDetails);
-    //     getDetails.map((curValue)=>{
-    //         let storeEmail = curValue.email;
-
-    //         if(storeEmail == forgotemail){
-    //             formRef.current.style.display="none";
-    //             forgetRef.current.style.display="none";
-    //             resetRef.current.style.display="block";
-    //         }
-    //         else{
-    //             errorForgotRef.current.style.display="block";
-    //             emailResetRef.current.value="";
-    //         }
-    //     })
-    // }
-
-    // const [resetPassword,setResetPassword] = useState("");
-    // const handleResetInput = (event) => {
-    //     const value = event.target.value;
-    //     const name = event.target.name;
-
-    //     resetErrorRef.current.style.display="none";
-
-    //     if("password" == name){
-    //         setResetPassword(value);
-    //     }
-    // // }
-
-    // const handleResetSubmit = (event) => {
-    //     event.preventDefault();
-
-    //     if(resetPassRef.current.value !== resetConRef.current.value){
-    //         resetErrorRef.current.style.display="block";
-    //     }
-    //     else{
-    //         let getDetails = JSON.parse(localStorage.getItem("user"));
-    //         console.log(getDetails);
-    //         getDetails.map((curValue)=>{
-    //             let storeEmail = curValue.email;
-    //             if(storeEmail == forgotemail){
-    //                 setEmail(forgotemail);
-    //                 setPassword(resetPassword);
-    //             }
-    //         })
-    //     }
-    //     resetPassRef.current.value="";
-    //     resetConRef.current.value="";
-    // }
-
+    // Handle password reset submit
+    const handleResetSubmit = (event) => {
+        event.preventDefault();
+        const users = JSON.parse(localStorage.getItem("user")) || [];
+        const userIndex = localStorage.getItem("resetUserIndex");
+        if(resetPassRef.current.value !== resetConRef.current.value){
+            resetErrorRef.current.style.display="block";
+        }
+        else if(userIndex !== null && resetPassword) {
+            users[userIndex].password = resetPassword;
+            localStorage.setItem("user", JSON.stringify(users));
+            // Clear form and state
+            setResetPassword("");
+            localStorage.removeItem("resetUserIndex");
+            resetSuccessRef.current.style.display="block";
+            resetFormRef.current.style.display = "none";
+        } 
+    };
 
     return (
+
         <div className="container">
             <h1 className="heading" ref={headingRef}>IP Address Subnet Calculator</h1>
             
             <div className="smallContainer" ref={formRef}>
+
                 <div className="head">
                     <div className="signUpDiv">
                         <h2 id="login" onClick={switchLoginPage} ref={loginTitleRef}>Login</h2>
@@ -316,7 +240,8 @@ const handleResetSubmit = (event) => {
                         <p onClick={forgotPass} id="forgotPass">Forget Password?</p>
                         <button type="submit" className="formBtn" id="loginBtn" name="loginBtn">Login</button>
                     </form>
-                </div> 
+                </div>
+                 
             </div>
 
             <div className="smallContainer2" ref={forgetRef}>
