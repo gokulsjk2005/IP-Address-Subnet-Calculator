@@ -69,13 +69,18 @@ const Home = () => {
             const totalHosts = Math.pow(2, 32 - prefix) - 2;
     
             result = `
-            IP Address: ${ip}                            Subnet Mask: ${mask.includes(".") ? mask : maskParts.join(".")} (/ ${prefix})
-            Network Address: ${netParts.join(".")}                 Broadcast Address: ${broadParts.join(".")}
-            First Usable Host: ${firstHost.join(".")}                   Last Usable Host: ${lastHost.join(".")}
+            IP Address: ${ip}                            
+            Subnet Mask: ${mask.includes(".") ? mask : maskParts.join(".")} (/ ${prefix})
+            Network Address: ${netParts.join(".")}                 
+            Broadcast Address: ${broadParts.join(".")}
+            First Usable Host: ${firstHost.join(".")}                   
+            Last Usable Host: ${lastHost.join(".")}
             Total Hosts: ${totalHosts}
             `;
         } catch (e) {
-            result = "              Error : " + e.message;
+            result = `            
+            Error : ${e.message} 
+            `;
         }
         setIpv4Result(result);
         setIpv4("");
@@ -101,10 +106,14 @@ const Home = () => {
                 `;
             }
             else{
-                result = `                       Error : Invalid IPv6 address`
+                result = `                       
+                Error : Invalid IPv6 address
+                `;
             }
         } catch (e){
-            result = "Error: " + e.message;
+            result = `            
+            Error : ${e.message} 
+            `;
         }
         setIpv6Result(result);
         setIpv6("");

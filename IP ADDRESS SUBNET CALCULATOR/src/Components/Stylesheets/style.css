@@ -1,6 +1,6 @@
 .container{
     width: 100%;
-    height: 100dvh;
+    min-height: 100dvh;
     background: linear-gradient(120deg,#60c3a0,#f0f0f0);
     display: flex;
     flex-direction: column;
@@ -268,7 +268,7 @@ b{
 
 .appContainer{
     width: 100%;
-    height: 600px;
+    height: 100%;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -445,7 +445,7 @@ b{
 }
 .resultApp{
     width: 800px;
-    height: 200px;
+    height: 255px;
     background: #06966137;
     display: none;
     align-items: center;
@@ -565,9 +565,7 @@ b{
         justify-content: center;
         gap:20px;
         margin-top: 0px;
-    }
-    .appContainer{
-        height: auto;
+        padding: 20px;
     }
     #appHeading{
         font-size: 25px;
@@ -584,23 +582,243 @@ b{
         margin-left: 0;
     }
 }
-@media (min-width: 450px) and (max-width : 600px){
-     #appHeading{
-        font-size: 25px;
-        margin-bottom: 40px;
-        text-align: center;
-    }
+@media (max-width : 289px){
     #logOut{
         width: 80px;
         height:35px;
         font-size: 12px;
-        margin-top: 14px;
-        margin-left: 20px;
-    }    
+        margin-top: -40px;
+        position: relative;
+        left: 40px;
+        margin-bottom: 10px ;
+    }  
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        display: none;
+    }
+
     .resultApp{
         width: 100%;
         margin-left: 0;
     } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 289px) and (max-width : 300px){
+    #logOut{
+        width: 80px;
+        height:35px;
+        font-size: 12px;
+        margin-top: -170px;
+        position: relative;
+        left: 60px;
+        margin-bottom: 100px ;
+    }  
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .resultApp{
+        width: 100%;
+        margin-left: 0;
+    } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 300px) and (max-width : 350px){
+    #logOut{
+        width: 80px;
+        height:35px;
+        font-size: 12px;
+        margin-top: -170px;
+        position: relative;
+        left: 80px;
+        margin-bottom: 100px ;
+    }  
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .resultApp{
+        width: 100%;
+        margin-left: 0;
+    } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 350px) and (max-width : 400px){
+    #logOut{
+        width: 80px;
+        height:35px;
+        font-size: 12px;
+        margin-top: -170px;
+        position: relative;
+        left: 100px;
+        margin-bottom: 100px ;
+    }  
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .resultApp{
+        width: 100%;
+        margin-left: 0;
+    } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 400px) and (max-width : 443px){
+    #logOut{
+        width: 80px;
+        height:35px;
+        font-size: 12px;
+        margin-top: -170px;
+        position: relative;
+        left: 120px;
+        margin-bottom: 100px ;
+    }  
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .resultApp{
+        width: 100%;
+        margin-left: 0;
+    } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+}
+@media (min-width: 443px) and (max-width : 600px){
+    #logOut{
+        width: 80px;
+        height:35px;
+        font-size: 12px;
+        margin-top: -130px;
+        position: relative;
+        left: 120px;
+        margin-bottom: 80px ;
+    }   
+    .appContainer{
+        height: auto;
+    }
+    .appHeader{
+        display: flex;
+        margin-bottom: 0px;
+        flex-direction: column;
+        align-items: center;
+        padding: 20px;
+    }
+    #appHeading{
+        font-size: 25px;
+        text-align: center;
+        margin-top: 30px;
+    }
+
+    .resultApp{
+        width: 100%;
+        margin-left: 0;
+    } 
+    .appInsideContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap:20px;
+        margin-top: 0px;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
 }
 
 /* Responsiveness */
