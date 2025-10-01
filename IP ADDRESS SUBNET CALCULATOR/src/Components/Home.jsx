@@ -67,7 +67,7 @@ const Home = () => {
             lastHost[3] -= 1;
     
             const totalHosts = Math.pow(2, 32 - prefix) - 2;
-    
+
             result = `
             IP Address: ${ip}                            
             Subnet Mask: ${mask.includes(".") ? mask : maskParts.join(".")} (/ ${prefix})
